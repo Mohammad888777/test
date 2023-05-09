@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/custom.css' %}">
+{% block content %}
+
+<h1>
+    asdasdsad
+
+</h1>
+
+{% for i in q %}
+    <div class="card" style="width: 18rem;">
+        {% if i.image %}
+            <img src="{{i.image.url}}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text">{{i.description}}</p>
+        <a href="{{i.get_absolute_url}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
